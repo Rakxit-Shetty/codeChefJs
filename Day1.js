@@ -26,3 +26,38 @@ rl02.on('close',()=>{
  final.forEach((ele)=>console.log(ele))
   
 })
+
+//Age Limit
+const readline=require('readline');
+const rl003=readline.createInterface(process.stdin,process.stdout);
+
+let res=[];
+rl003.on('line',(line)=>{
+    res.push(line);
+})
+
+rl003.on('close',()=>{
+    let final=[];
+    res.splice(0,1);
+    
+    let arrOfArr=res.map((ele)=>ele.split(" "));
+    
+    arrOfArr.forEach((ele)=>{
+        var flg="NO";
+        
+       ele.forEach((arr,idx)=>{
+        
+           if(idx==2){
+              if(ele[0]<=ele[2] && ele[1]>ele[2]){ flg="YES"}
+             //  console.log(ele[0]<=arr,"--",ele[1]>arr)
+           }
+       })
+       //console.log("----")
+       final.push(flg);
+    })
+    
+    for(let i of final){
+    console.log(i)    
+    }
+    
+})
