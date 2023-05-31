@@ -1,16 +1,28 @@
+//Number Mirror
+
+const readline=require('readline');
+const rl01=readline.createInterface({input:process.stdin,output:process.stdout})
+
+rl01.on('line',(line)=>{
+  console.log(line)
+})
+
 //Good Turn
 
-let res=[
-[1,4],
-[3,4],
-[4,2],
-[2,6]
-    ]
+const readline=require('readline');
+const rl02=readline.createInterface(process.stdin,process.stdout);
+
+let lines=[];
+
+rl02.on('line',(input)=>{
+    lines.push(input);
     
-    const see=(res)=>{
-       return res.map((ele)=>{ 
-       return ele.toString().split(",")
-       .reduce((acc,cur)=>Number(acc)+Number(cur),0)>6 ? "YES" :"NO"
-        })
-    }
-console.log("Welcome to Programiz!",see(res));
+})
+rl02.on('close',()=>{
+    lines.splice(0,1);
+    // console.log(lines)
+    let res =lines.map((ele)=>ele.split("").filter((ele)=>ele!=" ").reduce((acu,cur)=>Number(acu)+Number(cur),0))
+ let final=res.map((ele)=>ele>6 ? "YES": "NO")
+ final.forEach((ele)=>console.log(ele))
+  
+})
