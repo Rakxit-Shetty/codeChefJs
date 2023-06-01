@@ -183,3 +183,38 @@ rl08.on('close',()=>{
     })
     res.forEach((ele)=>console.log(Math.ceil(Number(ele/2))))
    })
+
+   //Buy 2 Get 1 Free
+   const readline=require('readline');
+const readl=readline.createInterface(process.stdin,process.stdout);
+
+arr=[]
+lskip=-1;
+
+readl.on('line',(read)=>{
+ lskip++;
+ if(lskip>0){
+     arr.push(read.split(" "))
+ }
+})
+
+readl.on('close',()=>{
+    
+    arr.forEach((ele)=>{
+        let sum=0, cal=0;
+        
+        for(i=0;i<ele[0];i++){
+            
+            if(cal==2){
+                cal=0
+            }
+            else{
+                cal++;
+                sum+=Number(ele[1])
+            }
+        }
+        
+        console.log(sum)
+    })
+        
+})
