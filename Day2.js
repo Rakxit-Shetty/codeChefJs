@@ -92,3 +92,27 @@ rl04.on('close',()=>{
         }
     })
 })
+
+//Masterchef finals
+
+const readline=require('readline');
+const rl05=readline.createInterface(process.stdin,process.stdout);
+
+let count2=-1;
+let line5=[];
+rl05.on('line',(read)=>{
+    count2++;
+    if(count2>0){
+        line4.push(read);
+    }
+})
+
+rl05.on('close',()=>{
+    line5.forEach((ele)=>{
+        if(Number(ele)<=10){
+            console.log("YES")
+        }else{
+            console.log("NO")
+        }
+    })
+})
