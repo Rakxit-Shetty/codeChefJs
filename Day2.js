@@ -142,3 +142,44 @@ rl06.on('close',()=>{
     })
     
 })
+
+//Fitness
+const readline=require('readline');
+const rl07=readline.createInterface(process.stdin,process.stdout);
+
+let skip1=-1;
+let day=[]
+rl07.on('line',(read)=>{
+    skip1++;
+    if(skip1>0){
+       day.push(read)
+    }
+})
+
+rl07.on('close',()=>{
+   day.forEach((ele)=>console.log(Number(ele)*10));
+   
+    
+})
+
+//Nearest Court
+
+const readline=require('readline');
+const rl08=readline.createInterface(process.stdin,process.stdout);
+
+let skipline=-1;
+let arry=[];
+
+rl08.on('line',(read)=>{
+    skipline++;
+    if(skipline>0){
+       arry.push(read.split(" "))
+    }
+})
+
+rl08.on('close',()=>{
+    let res= arry.map((ele)=>{
+       return Math.min(...[Math.abs(Number(ele[0])-Number(ele[1])),Math.abs(Number(ele[1])-Number(ele[0]))])
+    })
+    res.forEach((ele)=>console.log(Math.ceil(Number(ele/2))))
+   })
