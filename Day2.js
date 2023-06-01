@@ -116,3 +116,29 @@ rl05.on('close',()=>{
         }
     })
 })
+
+//Mario and the Broken String
+
+const readline=require('readline');
+const rl06=readline.createInterface(process.stdin,process.stdout);
+
+let skip=-1;
+let stri=[]
+rl06.on('line',(read)=>{
+    skip++;
+    if(skip>0){
+        if(skip%2==0){
+            stri.push(read)
+        }
+    }
+})
+
+rl06.on('close',()=>{
+    //console.log(stri);
+    let flg="YES";
+    stri.forEach((ele)=>{
+        [...ele].slice(ele.length/2).join("")== [...ele].slice(0,ele.length/2).join("") ? console.log("YES"):console.log("NO")
+        
+    })
+    
+})
