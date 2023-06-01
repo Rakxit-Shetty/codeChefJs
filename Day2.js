@@ -69,3 +69,26 @@ rl03.on('close',()=>{
     
     res.forEach((ele)=>console.log(ele));
 })
+
+//Water Consumption
+const readline=require('readline');
+const rl=readline.createInterface(process.stdin,process.stdout);
+
+let count1=-1;
+let line4=[];
+rl04.on('line',(read)=>{
+    count1++;
+    if(count1>0){
+        line4.push(read);
+    }
+})
+
+rl04.on('close',()=>{
+    line4.forEach((ele)=>{
+        if(Number(ele)>=2000){
+            console.log("YES")
+        }else{
+            console.log("NO")
+        }
+    })
+})
