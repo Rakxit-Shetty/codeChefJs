@@ -79,3 +79,5 @@ rl.on('close',()=>{
     // console.log(line);
     line.forEach((ele)=>console.log([...ele[1]].filter((e)=>e!=" ").at(Number(ele[2])-1))) 
 })
+
+
