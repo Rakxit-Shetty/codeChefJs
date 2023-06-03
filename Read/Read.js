@@ -40,3 +40,27 @@ rl.on('line',(read)=>{
     
 })
 
+
+
+//READ 
+const readline=require('readline');
+
+const rl=readline.createInterface(process.stdin,process.stdout);
+
+let nlythree=[];
+let all=[];
+let skip=-1;
+let thr=0;
+
+rl.on('line',(read)=>{
+    skip++;
+    if(skip>0){
+        nlythree.push(read);
+        thr++;
+        if(thr===2){
+            all.push(nlythree)
+            nlythree=[]
+            thr=0;
+        }
+    }
+})
