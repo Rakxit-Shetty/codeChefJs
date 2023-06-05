@@ -16,51 +16,52 @@ rl03.on('line',(read)=>{
 })
 
 // read 3 line by skiping 1
-let skip=-1;
-let ar=[];
-let line=[];
-let thr=0;
 
-rl.on('line',(read)=>{
-    skip++;
+// let skip=-1;
+// let ar=[];
+// let line=[];
+// let thr=0;
+
+// rl.on('line',(read)=>{
+//     skip++;
     
-    if(skip>0){
+//     if(skip>0){
         
-        ar.push(read)
+//         ar.push(read)
         
-        if(thr===2){
-          line.push(ar)
-          ar=[];
-          thr=-1;
-        }
+//         if(thr===2){
+//           line.push(ar)
+//           ar=[];
+//           thr=-1;
+//         }
         
-        thr++;
-        }
+//         thr++;
+//         }
         
     
-})
+// })
 
 
 
-//READ 
-const readline=require('readline');
+// //READ 
+// const readline=require('readline');
 
-const rl=readline.createInterface(process.stdin,process.stdout);
+// const rl=readline.createInterface(process.stdin,process.stdout);
 
-let nlythree=[];
-let all=[];
-let skip=-1;
-let thr=0;
+// let nlythree=[];
+// let all=[];
+// let skip=-1;
+// let thr=0;
 
-rl.on('line',(read)=>{
-    skip++;
-    if(skip>0){
-        nlythree.push(read);
-        thr++;
-        if(thr===2){
-            all.push(nlythree)
-            nlythree=[]
-            thr=0;
-        }
-    }
-})
+// rl.on('line',(read)=>{
+//     skip++;
+//     if(skip>0){
+//         nlythree.push(read);
+//         thr++;
+//         if(thr===2){
+//             all.push(nlythree)
+//             nlythree=[]
+//             thr=0;
+//         }
+//     }
+// })
